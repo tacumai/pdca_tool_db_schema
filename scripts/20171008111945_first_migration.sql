@@ -17,7 +17,7 @@
 -- // First migration.
 -- Migration SQL that makes the change goes here.
 CREATE TABLE kgi (
-  id int NOT NULL PRIMARY KEY,
+  id INTEGER NOT NULL PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
   status VARCHAR(255) NOT NULL,
   created_at DATETIME NOT NULL,

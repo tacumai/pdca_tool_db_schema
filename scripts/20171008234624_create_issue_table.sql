@@ -14,27 +14,22 @@
 --    limitations under the License.
 --
 
--- // Create Changelog
-
--- Default DDL for changelog table that will keep
--- a record of the migrations that have been run.
-
--- You can modify this to suit your database before
--- running your first migration.
-
--- Be sure that ID and DESCRIPTION fields exist in
--- BigInteger and String compatible fields respectively.
-
-CREATE TABLE ${changelog} (
-ID NUMERIC(20,0) NOT NULL,
-APPLIED_AT VARCHAR(25) NOT NULL,
-DESCRIPTION VARCHAR(255) NOT NULL
+-- // create_issue_table
+-- Migration SQL that makes the change goes here.
+CREATE TABLE issues (
+  id INTEGER NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  impact_rank TINYINT NOT NULL,
+  deadline DATE NOT NULL,
+  easiness_rank TINYINT NOT NULL,
+  priority TINYINT NOT NULL,
+  kgi_id INTEGER NOT NULL,
+  FOREIGN KEY(kgi_id) references kgi(id),
+  PRIMARY KEY(id)
 );
 
--- ALTER TABLE ${changelog}
--- ADD CONSTRAINT PK_${changelog}
--- PRIMARY KEY (id);
 
 -- //@UNDO
+-- SQL to undo the change goes here.
 
-DROP TABLE ${changelog};
+
