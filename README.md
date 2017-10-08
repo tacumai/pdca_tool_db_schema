@@ -1,2 +1,0 @@
-# pdca_tool_db_schema
-鬼速PDCAツールのDB構成管理
